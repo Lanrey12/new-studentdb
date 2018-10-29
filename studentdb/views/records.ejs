@@ -1,0 +1,33 @@
+<div class="panel  panel-primary">
+<h1 class="display-3">Studentdb</h1> 
+<table class="table" "table-striped">
+ <thead>
+        <tr> 
+        <th> Id </th>
+        <th> Matric.No </th>
+        <th> Firstname </th>
+        <th> Lastname </th>
+        <th> Email address </th>
+        <th> </th>
+        </tr>
+    </thead>
+    <tbody>
+              <% studentdb.forEach(function(studentdb){ %>
+            <tr>
+                    <td><%= studentdb.id %></td>
+                    <td><%= studentdb.title %></td>
+                    <td><%= studentdb.firstname %></td>
+                    <td><%= studentdb.lastname %></td>
+                    <td><%= studentdb.body %></td>
+                    <td>
+                        
+                        <a href="/studentdb/edit/<%= studentdb.id %>" class="btn btn-info">Edit records</a>
+                        <form class="d-inline" action="/studentdb/delete/<%= studentdb.id %>" method="POST">
+                        <input type="submit" value="Delete" class="btn btn-danger">
+                        </form>
+                 </td>
+            </tr>
+           <% }) %>  
+    </tbody>
+</table>
+</div>
