@@ -15,8 +15,14 @@ module.exports = {
               
            }
    return res.view('records', {studentdb:studentdb});
-     });
-   },
+     }); 
+     },
+  search:function(req, res){
+
+  return res.view('search');
+      
+},
+
   add:function(req, res){
   return res.view('add') 
   },
